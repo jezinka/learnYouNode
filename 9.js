@@ -15,7 +15,7 @@ function make_get(host, order) {
         })
         res.on('error', console.error)
         res.on('end', () => {
-            collected_data[order] = response;
+            collected_data[order - 2] = response;
             count++;
             if (count == 3) {
                 collected_data.forEach(element => {
