@@ -19,6 +19,9 @@ var server = http.createServer(function (req, res) {
             });
         } else if (pathName == '/api/unixtime') {
             json = JSON.stringify({ unixtime: date.getTime() })
+        } else {
+            res.writeHead(404)
+            res.end()
         }
 
         res.writeHead(200, { 'Content-Type': 'application/json' })
